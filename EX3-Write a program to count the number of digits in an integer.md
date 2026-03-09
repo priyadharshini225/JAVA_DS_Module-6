@@ -1,7 +1,7 @@
 # EX3 Write a program to count the number of digits in an integer.
 ## DATE: 09/03/26
 ## AIM:
-To write a C program to implement Tower of Hanoi
+To write a java program to count the number of digits in an integer.
 
 ## Algorithm
 1. Start the program.
