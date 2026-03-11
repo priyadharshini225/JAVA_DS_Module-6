@@ -24,13 +24,9 @@ public class Main {
         if (i == n - 1) {
             return arr[i];
         }
-
-    
         int minRest = getMin(arr, i + 1, n);
-       
         return Math.min(arr[i], minRest);
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
