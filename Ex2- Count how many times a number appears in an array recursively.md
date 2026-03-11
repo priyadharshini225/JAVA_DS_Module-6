@@ -20,15 +20,10 @@ RegisterNumber: 212223240129
 import java.util.Scanner;
 
 public class CountOccurrences {
-
-    // Recursive function to count occurrences of a target number
     public static int countOccurrences(int[] arr, int n, int target) {
-        //write your code here
         if (n == 0) {
             return 0;
         }
-
-        // Check the last element and add 1 if it matches the target
         if (arr[n - 1] == target) {
             return 1 + countOccurrences(arr, n - 1, target);
         } else {
@@ -38,8 +33,6 @@ public class CountOccurrences {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Input: Size of array
         int size = scanner.nextInt();
 
         if (size <= 0) {
@@ -47,7 +40,6 @@ public class CountOccurrences {
             return;
         }
 
-        // Input: Array elements
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
             arr[i] = scanner.nextInt();
@@ -56,7 +48,6 @@ public class CountOccurrences {
         // Input: Target number to count
         int target = scanner.nextInt();
 
-        // Compute and display result
         int count = countOccurrences(arr, size, target);
         System.out.println("The number " + target + " appears " + count + " time(s) in the array.");
 
