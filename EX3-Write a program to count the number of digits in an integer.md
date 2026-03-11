@@ -4,13 +4,16 @@
 To write a java program to count the number of digits in an integer.
 
 ## Algorithm
-1. Start the program.
-2. Read an integer from the user.
-3. Define a recursive function countDigits() that counts digits by dividing the number by 10 each time.
-4. Base condition: if the number is 0, return 0.
-5. Recursive step: return 1 + countDigits(number / 10).
-6. Display the total count of digits.
-7. Stop the program. 
+2. Read an integer input num from the user.
+3. If num is equal to 0, then the number has 1 digit.
+4. Convert num to its absolute value to handle negative numbers.
+5. Initialize a counter variable count = 0.
+6. Repeat the following steps while num > 0:
+Divide num by 10 (integer division).
+Increment count by 1.
+7. After the loop ends, count will contain the number of digits.
+8.  Display the value of count.
+9. End the program.  
 
 ## Program:
 ```
@@ -21,29 +24,33 @@ RegisterNumber: 212223240129
 */
 import java.util.Scanner;
 
-public class CountDigitsRecursive {
-    static int countDigits(int n) {
-        if (n == 0)
-            return 0;
-        return 1 + countDigits(n / 10);
+public class CountDigits {
+
+    public static int countDigits(int num) {
+        int count = 0;
+        if (num == 0) return 1; 
+        num = Math.abs(num);   
+        while (num > 0) {
+            count++;
+            num /= 10;
+        }
+        return count;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter an integer: ");
-        int n = sc.nextInt();
-        if (n == 0)
-            System.out.println("Number of digits: 1");
-        else
-            System.out.println("Number of digits: " + countDigits(Math.abs(n)));
-        sc.close();
+        int num = sc.nextInt();
+
+        int digits = countDigits(num);
+        System.out.println("Number of digits: " + digits);
     }
 }
 ```
 
 ## Output:
 
-<img width="432" height="181" alt="image" src="https://github.com/user-attachments/assets/89812de3-f964-42ce-9d0f-79a466ba4e9c" />
+<img width="785" height="301" alt="image" src="https://github.com/user-attachments/assets/262f4a30-0311-4cd3-82de-b44843630170" />
+
 
 
 ## Result:
