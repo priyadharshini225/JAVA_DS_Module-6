@@ -4,11 +4,15 @@
 To write a java function to evaluate weather the given Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension and find the nature of resultant matrrix.
 
 ## Algorithm
-1. Start the program and read the number of rows and columns of Matrix A and Matrix B.
-2. Check dimensions of both matrices. If they are not equal, display “Matrices are not of same dimension” and stop.
-3. Read Matrix A and check elements. If any element is even, mark Matrix A as invalid and stop.
-4. Compute the resultant matrix (e.g., A + B) if matrices are valid.
-5. Check resultant matrix: if all elements are odd print “Odd Matrix”, if all are even print “Even Matrix”, then display the matrix and stop.
+
+1. Start the program.
+2. Read the number of rows rows and columns cols.
+3. Create three 2D arrays.
+4. Input elements for Matrix A.
+5. Input elements for Matrix B.
+6. Perform matrix addition
+7. After each row is printed, move to the next line.
+8. End the program.
 
 ## Program:
 ```
@@ -22,44 +26,44 @@ import java.util.Scanner;
 public class MatrixAddition {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int rows, cols;
 
-        int rows = sc.nextInt();
-        int cols = sc.nextInt();
+       
+        rows = sc.nextInt();
+        cols = sc.nextInt();
 
         int[][] A = new int[rows][cols];
         int[][] B = new int[rows][cols];
-        int[][] result = new int[rows][cols];
+        int[][] sum = new int[rows][cols];
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
                 A[i][j] = sc.nextInt();
-            }
-        }
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+
+        
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
                 B[i][j] = sc.nextInt();
-            }
-        }
+
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
+                sum[i][j] = A[i][j] + B[i][j];
+
+        
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                result[i][j] = A[i][j] + B[i][j];
-            }
-        }
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                System.out.print(result[i][j] + " ");
-            }
+            for (int j = 0; j < cols; j++)
+                System.out.print(sum[i][j] + " ");
             System.out.println();
         }
-
-       
+        sc.close();
     }
 }
 ```
 
 ## Output:
 
-<img width="524" height="766" alt="image" src="https://github.com/user-attachments/assets/1a377cee-0045-406d-aac3-a0b72d2cf04c" />
+<img width="575" height="744" alt="image" src="https://github.com/user-attachments/assets/b31df123-eb14-4170-9367-96c2f4418264" />
 
 
 ## Result:
